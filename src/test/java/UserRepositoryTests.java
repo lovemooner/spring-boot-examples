@@ -32,7 +32,7 @@ public class UserRepositoryTests {
 //        Assert.assertEquals("bb", userRepository.findByUserNameOrEmail("bb", "cc@126.com").getNickName());
 //        userRepository.delete(userRepository.findByUserName("aa1"));
         User user= userRepository.findByUserName("nan2");
-        User user2= userRepository.findById(1000l);
+        User user2= userRepository.findOne(1000l);
         if(user!=null)
         System.out.println(user.getUserName());
     }
