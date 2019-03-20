@@ -18,6 +18,12 @@
     </properties>
 
     <dependencies>
+        <!--my starter-->
+        <dependency>
+            <groupId>love.moon</groupId>
+            <artifactId>example-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
