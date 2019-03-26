@@ -11,12 +11,12 @@
     <modules>
         <module>my</module>
         <module>example-spring-boot-starter</module>
+        <module>example-mybatis</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.0.2.RELEASE</version>
     </parent>
 </project>
