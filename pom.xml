@@ -12,6 +12,7 @@
         <module>my</module>
         <module>example-spring-boot-starter</module>
         <module>example-mybatis</module>
+        <module>spring-boot-actuator</module>
     </modules>
 
     <parent>
