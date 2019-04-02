@@ -13,6 +13,7 @@
         <module>example-spring-boot-starter</module>
         <module>example-mybatis</module>
         <module>spring-boot-actuator</module>
+        <module>spring-boot-docker</module>
     </modules>
 
     <parent>
