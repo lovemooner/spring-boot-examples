@@ -1,6 +1,8 @@
 /*/target/*
+*.iml
 /*.iml
 /*/*.iml
+/*.jar
 /.idea/*
 /log
 /*/log
