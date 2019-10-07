@@ -5,6 +5,12 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+/**
+ * @author : dongnan
+ * date: 2019/4/21 13:48
+ * description: annotation mapper
+ */
+
 @Mapper
 public interface UserAnnotationMapper {
 

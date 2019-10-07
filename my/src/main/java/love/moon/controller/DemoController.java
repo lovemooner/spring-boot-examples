@@ -1,21 +1,20 @@
 package love.moon.controller;
 
 import love.moon.ExampleService;
-import love.moon.dao.UserRepository;
 import love.moon.domain.User;
-import love.moon.service.UserService;
+import love.moon.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController {
+public class DemoController {
 
     @Autowired
     private ExampleService exampleService;
 
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @RequestMapping("/getUser")
     public User getUser() {
@@ -27,4 +26,10 @@ public class UserController {
     public String myStarter() {
         return exampleService.wrap("test");
     }
+
+    @RequestMapping("/hello1")
+    public String hello() {
+        return "hello";
+    }
+
 }

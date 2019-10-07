@@ -3,12 +3,10 @@ package love.moon.controller;
 import love.moon.ExampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class HelloController {
+public class LoginController {
 
     @RequestMapping("/")
     public String index() {
@@ -22,7 +20,12 @@ public class HelloController {
 
     @RequestMapping("/login")
     public String login() {
-        return "login";
+        return "login"; //跳转到页面login
+    }
+
+    @PostMapping("/login")
+    public Object login(@RequestParam String username) {
+        return "ok";
     }
 
 

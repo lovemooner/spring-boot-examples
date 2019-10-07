@@ -10,7 +10,6 @@
         <result property="userName" column="user_name"/>
     </resultMap>
 
-
     <select id="findUserByName" parameterType="love.moon.pojo.QueryParam" resultType="love.moon.entity.User">
         SELECT * FROM t_user WHERE 1 = 1
         <if test="_parameter != null">
@@ -27,4 +26,5 @@
             limit #{start},#{limit}
         </if>
     </select>
+
 </mapper>

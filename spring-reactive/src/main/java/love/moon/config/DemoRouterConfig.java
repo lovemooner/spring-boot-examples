@@ -19,15 +19,16 @@ public class DemoRouterConfig {
 
     @Bean
     public RouterFunction<ServerResponse> routes() {
-        return route(GET("/"), (ServerRequest req)-> ok().body(
-                        BodyInserters.fromObject(
-                                Arrays.asList(
-                                        Message.builder().body("hello Spring 5").build(),
-                                        Message.builder().body("hello Spring Boot 2").build()
-                                )
-                        )
-                )
-        );
+//        return route(GET("/"), (ServerRequest req)-> ok().body(
+//                        BodyInserters.fromObject(
+//                                Arrays.asList(
+//                                        Message.builder().body("hello Spring 5").build(),
+//                                        Message.builder().body("hello Spring Boot 2").build()
+//                                )
+//                        )
+//                )
+//        );
+        return null;
     }
 }
 

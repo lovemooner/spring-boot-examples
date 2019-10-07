@@ -4,8 +4,14 @@ import love.moon.entity.User;
 import love.moon.pojo.QueryParam;
 import org.apache.ibatis.annotations.Mapper;
 
+/**
+ * @author : dongnan
+ * date: 2019/4/21 13:48
+ * description: xml mapper
+ */
+
 @Mapper
-public interface UserXmlMapper {
+public interface UserMapper {
 
     User findUserByName(String userName);
 

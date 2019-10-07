@@ -1,7 +1,8 @@
+
 spring:
   datasource:
     #连接MySQL
-    url: jdbc:mysql://slc11fsp.us.oracle.com:3306/bigdata
+    url: jdbc:mysql://127.0.0.1:3306/bigdata
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
@@ -15,3 +16,8 @@ logging:
   level:
     #打印SQL信息
     love.moon.mapper: debug
+
+
+ups:
+  server:
+    url: test
