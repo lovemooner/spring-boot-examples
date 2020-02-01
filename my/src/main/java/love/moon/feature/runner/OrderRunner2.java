@@ -1,4 +1,4 @@
-package love.moon.runner;
+package love.moon.feature.runner;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;

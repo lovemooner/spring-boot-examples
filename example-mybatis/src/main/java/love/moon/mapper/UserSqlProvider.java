@@ -4,7 +4,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
 
 /**
- * 主要用途：根据复杂的业务需求来动态生成SQL.
+ * 
+ * 根据复杂的业务需求来动态生成SQL.
  * <p>
  * 目标：使用Java工具类来替代传统的XML文件.(例如：UserSqlProvider.java <-- UserMapper.xml)
  */
