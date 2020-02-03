@@ -16,6 +16,8 @@
         <module>spring-boot-docker</module>
         <module>spring-reactive</module>
         <module>spring-boot-hello-world</module>
+        <module>flume-es-sink-example</module>
+
     </modules>
 
     <parent>

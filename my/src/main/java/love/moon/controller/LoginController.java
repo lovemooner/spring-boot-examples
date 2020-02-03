@@ -1,7 +1,5 @@
 package love.moon.controller;
 
-import love.moon.ExampleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
