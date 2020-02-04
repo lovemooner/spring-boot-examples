@@ -1,0 +1,57 @@
+version: '3'
+services:
+  zk-server-node0:
+    image: zookeeper:3.4.14
+    restart: always
+    hostname: zk-host0
+    container_name: zk-node0
+    ports:
+    - 2181:2181
+    volumes:
+    - "./data/node0:/data"
+    - "./datalog/node0:/datalog"
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=zk-server-node0:2888:3888 server.2=zk-server-node1:2888:3888 server.3=zk-server-node2:2888:3888
+    networks:
+      default:
+        ipv4_address: 172.23.0.11
+
+  zk-server-node1:
+    image: zookeeper:3.4.14
+    restart: always
+    hostname: zk-host1
+    container_name: zk-node1
+    ports:
+    - 2180:2181
+    volumes:
+    - "./data/node1:/data"
+    - "./datalog/node1:/datalog"
+    environment:
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=zk-server-node0:2888:3888 server.2=zk-server-node1:2888:3888 server.3=zk-server-node2:2888:3888
+    networks:
+      default:
+        ipv4_address: 172.23.0.12
+
+  zk-server-node2:
+    image: zookeeper:3.4.14
+    restart: always
+    hostname: zk-host2
+    container_name: zk-node2
+    ports:
+    - 2179:2181
+    volumes:
+    - "./data/node2:/data"
+    - "./datalog/node2:/datalog"
+    environment:
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: server.1=zk-server-node0:2888:3888 server.2=zk-server-node1:2888:3888 server.3=zk-server-node2:2888:3888
+    networks:
+      default:
+        ipv4_address: 172.23.0.13
+
+networks:
+  default:
+    external:
+      name: zookeeper_network
