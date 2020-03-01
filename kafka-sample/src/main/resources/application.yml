@@ -1,0 +1,35 @@
+server:
+  servlet:
+    context-path: /kafka-sample
+
+spring:
+  kafka:
+    bootstrap-servers: 192.168.6.100:9092,192.168.6.100:9093,192.168.6.100:9094
+    topics:
+      topic-news: news-sample
+    producer:
+      #batch-size: 16384
+      #buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      #保证producer幂等
+      retries: 10
+      properties:
+       enable.idempotence: true
+
+    consumer:
+      enable-auto-commit: false
+      auto-commit-interval: 100ms
+      group-id: group-news
+      auto-offset-reset: earliest  # latest
+      session-timeout-ms: 15000
+      auto-commit-interval-ms: 1000
+      max-poll-interval-ms: 1000
+      max-poll-records: 5
+      concurrency: 1
+      poll-timeout: 4000
+      key-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      ack-mode: MANUAL
