@@ -15,7 +15,7 @@ public class BeanFactoryPostProcessorDemo implements BeanFactoryPostProcessor{
         String[] beanStr = beanFactory.getBeanDefinitionNames();
         //循环bean做出自定义的操作
         for (String beanName : beanStr) {
-//            System.out.println("bean name:"+beanName);
+            System.out.println("bean name:"+beanName);
             if ("beanLifeCycle".equals(beanName)) {
                 BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
 //                beanDefinition.getPropertyValues().add("age", "20");

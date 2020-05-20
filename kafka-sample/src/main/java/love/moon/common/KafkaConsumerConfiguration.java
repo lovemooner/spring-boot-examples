@@ -1,6 +1,7 @@
 package love.moon.common;
 
 import lombok.Data;
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +28,11 @@ public class KafkaConsumerConfiguration {
 
     @Autowired
     private KafkaProperties properties;
+
+    @Bean
+    public NewTopic initialTopic() {
+        return new NewTopic("news-sample3",3, (short) 1 );
+    }
 
     @Bean
     public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> ContainerFactory1() {

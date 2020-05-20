@@ -1,23 +1,6 @@
 server:
   servlet:
-    context-path: /
-
-
-
-huawei:
-  es:
-    EsServerHost: 10.65.3.30:19200
-    MaxRetryTimeoutMillis: 300000
-    ConnectTimeout: 5000
-    SocketTimeout: 60000
-    isSecureMode: false
-    index: index_xxzx_task10
-    type: _doc
-    id: 1
-    shardNum: 5
-    replicaNum: 1
-    user:
-      principal: user_xingchen
+    context-path: /test
 
 
 logging:

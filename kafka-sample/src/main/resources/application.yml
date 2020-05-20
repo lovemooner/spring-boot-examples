@@ -4,9 +4,9 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: 192.168.6.100:9092,192.168.6.100:9093,192.168.6.100:9094
+    bootstrap-servers: 192.168.6.100:9092
     topics:
-      topic-news: news-sample
+      topic-news: news-sample3
     producer:
       #batch-size: 16384
       #buffer-memory: 33554432
@@ -20,7 +20,7 @@ spring:
     consumer:
       enable-auto-commit: false
       auto-commit-interval: 100ms
-      group-id: group-news
+      group-id: group-news1
       auto-offset-reset: earliest  # latest
       session-timeout-ms: 15000
       auto-commit-interval-ms: 1000

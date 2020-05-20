@@ -8,26 +8,26 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Component
-public class BeanLifeCycleImpl  implements InitializingBean {
+public class BeanLifeCycleImpl  implements InitializingBean,BeanLifeCycle {
 
 
     public BeanLifeCycleImpl() {
-        System.out.println("construtor");
+        System.out.println("beanLifeCycleImpl Construtor");
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("InitializingBean--afterPropertiesSet");
+    public void afterPropertiesSet() {
+        System.out.println("beanLifeCycleImpl InitializingBean--afterPropertiesSet");
     }
 
-    @PostConstruct //初始化方法的注解方式  等同与init-method=init
+    @PostConstruct // 等同与init-method=init
     public void init() {
-        System.out.println("init-method");
+        System.out.println("beanLifeCycleImpl  PostConstruct/init-method");
     }
 
-    @PreDestroy    //销毁方法的注解方式  等同于destory-method=destory222
+    @PreDestroy    // 等同于destory-method
     public void destory(){
-        System.out.println("调用销毁化方法....");
+        System.out.println("beanLifeCycleImpl 调用销毁化方法....");
     }
 
     @Annotation100(confirmMethod = "confirmMethod", cancelMethod = "cancelMethod")
