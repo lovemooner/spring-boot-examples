@@ -1,4 +1,4 @@
-package love.moon.service;
+package love.moon.feature.bean.lifecycle;
 
 public interface BeanLifeCycle {
 

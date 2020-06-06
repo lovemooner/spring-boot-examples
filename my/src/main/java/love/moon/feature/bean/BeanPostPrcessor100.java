@@ -1,11 +1,12 @@
-package love.moon.config;
+package love.moon.feature.bean;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanPostPrcessorDemo implements BeanPostProcessor {
+public class BeanPostPrcessor100 implements BeanPostProcessor {
+
     /**
      * Bean 实例化之前进行的处理
      */
@@ -13,7 +14,6 @@ public class BeanPostPrcessorDemo implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if("beanLifeCycleImpl".equals(beanName)){
             System.out.println(beanName + " postProcessBeforeInitialization");
-
         }
         return bean;
     }

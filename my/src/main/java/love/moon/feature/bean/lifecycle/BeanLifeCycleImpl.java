@@ -1,4 +1,4 @@
-package love.moon.service;
+package love.moon.feature.bean.lifecycle;
 
 import love.moon.annotation.Annotation100;
 import org.springframework.beans.factory.InitializingBean;

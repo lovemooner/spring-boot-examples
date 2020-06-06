@@ -17,7 +17,6 @@ logging:
     #打印SQL信息
     love.moon.mapper: debug
 
-
 ups:
   server:
     url: test

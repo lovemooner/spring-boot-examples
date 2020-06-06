@@ -1,4 +1,4 @@
-package love.moon.aop;
+package love.moon.feature.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;

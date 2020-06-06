@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package love.moon.config;
+package love.moon.feature.bean.lifecycle;
 
 
 
