@@ -13,7 +13,7 @@
         <module>example-spring-boot-starter</module>
         <module>example-mybatis</module>
         <module>spring-boot-actuator</module>
-        <module>spring-reactive</module>
+        <module>spring-web-flux</module>
         <module>spring-boot-hello-world</module>
         <module>flume-es-sink-example</module>
         <module>docker-sample</module>
