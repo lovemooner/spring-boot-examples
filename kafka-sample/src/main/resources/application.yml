@@ -6,7 +6,8 @@ spring:
   kafka:
     bootstrap-servers: 192.168.6.100:9092
     topics:
-      topic-news: news-sample3
+      my-topic: news-sample3
+
     producer:
       #batch-size: 16384
       #buffer-memory: 33554432

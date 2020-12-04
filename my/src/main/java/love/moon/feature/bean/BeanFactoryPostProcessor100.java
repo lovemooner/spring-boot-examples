@@ -12,14 +12,13 @@ public class BeanFactoryPostProcessor100 implements BeanFactoryPostProcessor{
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         System.out.println("******调用BeanFactoryPostProcessor开始");
         //获取到Spring中所有的beanName
-        String[] beanStr = beanFactory.getBeanDefinitionNames();
+        String[] beanNameList = beanFactory.getBeanDefinitionNames();
         //循环bean做出自定义的操作
-        for (String beanName : beanStr) {
-            System.out.println("bean name:"+beanName);
-            if ("beanLifeCycle".equals(beanName)) {
+        for (String beanName : beanNameList) {
+            if (beanName.contains("beanLifeCycle")) {
                 BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
-//                beanDefinition.getPropertyValues().add("age", "20");
-                System.out.println("postProcessBeanFactory");
+                beanDefinition.getPropertyValues().add("age", "20");
+                System.out.println("LifeCycle: postProcessBeanFactory");
             }
         }
 //        System.out.println("******调用BeanFactoryPostProcessor结束");

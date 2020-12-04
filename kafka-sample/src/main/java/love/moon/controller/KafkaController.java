@@ -1,9 +1,8 @@
 package love.moon.controller;
 
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import love.moon.dto.NewsDTO;
-import love.moon.service.NewsService;
+import love.moon.dto.MessageDTO;
+import love.moon.service.impl.KafkaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,17 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @describe
  */
 @RestController
-@RequestMapping("/news")
+@RequestMapping("/kafka")
 @Slf4j
-public class NewsController {
+public class KafkaController {
 
     @Autowired
-    private NewsService newsService;
+    private KafkaServiceImpl service;
 
-    @ApiOperation(value = "查询图片素材")
     @PostMapping()
-    public String send(@RequestBody NewsDTO newsDTO) {
-        newsService.send(newsDTO);
+    public String send(@RequestBody MessageDTO dto) {
+        service.send(dto);
         return "OK";
     }
 }

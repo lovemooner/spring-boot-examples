@@ -31,6 +31,7 @@ public class BeanWrapperConfiguration {
                 for (Method method : methods) {
                     Annotation100 annotation = AnnotationUtils.findAnnotation(method, Annotation100.class);
                     if (Objects.nonNull(annotation)) {
+//                        System.out.println(beanName+" Annotation100");
                         InvocationHandler100 handler100 = new InvocationHandler100();
                         InvocationHandler handler = Proxy.getInvocationHandler(bean);
                         handler100.setDelegate(handler);
@@ -42,4 +43,5 @@ public class BeanWrapperConfiguration {
             }
         };
     }
+
 }

@@ -1,6 +1,5 @@
 package love.moon.dto;
 
-import com.sun.istack.internal.NotNull;
 import lombok.Data;
 
 /**
@@ -9,7 +8,7 @@ import lombok.Data;
  * @describe
  */
 @Data
-public class NewsDTO {
+public class MessageDTO {
 
     private String name;
     private String title;

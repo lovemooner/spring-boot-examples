@@ -23,6 +23,12 @@ public class BeanAutoWide {
         }
     }
 
+    /**
+     * 解决循环依赖
+     * @param beanClass
+     * @param <T>
+     * @return
+     */
     @SneakyThrows
     private static <T> T getBean(Class<T> beanClass) {
         String beanName = beanClass.getSimpleName().toLowerCase();

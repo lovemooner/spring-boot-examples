@@ -31,7 +31,8 @@ public class KafkaConsumerConfiguration {
 
     @Bean
     public NewTopic initialTopic() {
-        return new NewTopic("news-sample3",3, (short) 1 );
+        return new NewTopic("native-demo",3, (short) 1 );
+//        return new NewTopic("news-sample3",3, (short) 1 );
     }
 
     @Bean
@@ -59,7 +60,7 @@ public class KafkaConsumerConfiguration {
     public Map<String, Object> getCommonProperties() {
         Map<String, Object> map = new HashMap<>();
         map.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, properties.getBootstrapServers());
-        map.put(ConsumerConfig.CLIENT_ID_CONFIG, "consumer-news");
+        map.put(ConsumerConfig.CLIENT_ID_CONFIG, "consumer-test");
         map.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, properties.isEnableAutoCommit());
         map.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, properties.getAutoCommitIntervalMs());
         map.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, properties.getAutoOffsetReset());
@@ -79,6 +80,7 @@ public class KafkaConsumerConfiguration {
         @Value("${spring.kafka.bootstrap-servers}")
         private String bootstrapServers;
         private String groupId;
+        //group内客户端数量
         private int concurrency;
         private String autoOffsetReset;
         private String sessionTimeoutMs;

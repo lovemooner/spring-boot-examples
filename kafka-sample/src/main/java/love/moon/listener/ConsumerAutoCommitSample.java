@@ -20,7 +20,7 @@ import java.util.List;
 public class ConsumerAutoCommitSample {
 
     @KafkaListener(
-            id = "group-consumer-1", topics = {"${spring.kafka.topics.topic-news}"},
+            id = "group-consumer-1", topics = {"${spring.kafka.topics.my-topic}"},
             containerFactory = "ContainerFactory1"
     )
     public void doListener(List<ConsumerRecord<String, String>> records) {

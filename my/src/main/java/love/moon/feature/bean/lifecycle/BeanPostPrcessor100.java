@@ -1,11 +1,12 @@
-package love.moon.feature.bean;
+package love.moon.feature.bean.lifecycle;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BeanPostPrcessor100 implements BeanPostProcessor {
+public class BeanPostPrcessor100 implements BeanPostProcessor, Ordered {
 
     /**
      * Bean 实例化之前进行的处理
@@ -13,7 +14,7 @@ public class BeanPostPrcessor100 implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if("beanLifeCycleImpl".equals(beanName)){
-            System.out.println(beanName + " postProcessBeforeInitialization");
+            System.out.println("LifeCycle: BeanPostProcessor.postProcessBeforeInitialization" );
         }
         return bean;
     }
@@ -24,9 +25,13 @@ public class BeanPostPrcessor100 implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if("beanLifeCycleImpl".equals(beanName)){
-            System.out.println(beanName + " postProcessAfterInitialization");
-
+            System.out.println("LifeCycle: BeanPostProcessor.postProcessAfterInitialization");
         }
         return bean;
+    }
+
+    @Override
+    public int getOrder() {
+        return 10;
     }
 }

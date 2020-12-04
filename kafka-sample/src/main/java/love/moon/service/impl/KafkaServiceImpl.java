@@ -1,8 +1,8 @@
 package love.moon.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import love.moon.dto.NewsDTO;
-import love.moon.service.NewsService;
+import love.moon.dto.MessageDTO;
+import love.moon.service.KafkaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -18,19 +18,18 @@ import org.springframework.util.concurrent.SuccessCallback;
  * @describe
  */
 @Component
-public class NewsServiceImpl implements NewsService {
+public class KafkaServiceImpl implements KafkaService {
 
-    @Autowired
+    @Autowired(required = false)
     private KafkaTemplate<String, Object> kafkaTemplate;
 
-    @Value("${spring.kafka.topics.topic-news}")
+    @Value("${spring.kafka.topics.my-topic}")
     private String topic;
 
-    public void send(NewsDTO newsDTO){
-        ListenableFuture<SendResult<String, Object>>  listenableFuture= kafkaTemplate.send(topic, JSONObject.toJSONString(newsDTO));
+    public void send(MessageDTO dto) {
+        ListenableFuture<SendResult<String, Object>> listenableFuture = kafkaTemplate.send(topic, JSONObject.toJSONString(dto));
         //发送成功回调
         SuccessCallback<SendResult<String, Object>> successCallback = result -> {
-
             System.out.println("成功");//成功业务逻辑
         };
         //发送失败回调
