@@ -12,7 +12,7 @@
     <artifactId>spring-web-flux</artifactId>
 
     <properties>
-        <guava.version>28.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <spring.version>5.0.0.RELEASE</spring.version>
     </properties>
 
