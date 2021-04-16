@@ -5,4 +5,6 @@ import love.moon.dto.MessageDTO;
 public interface KafkaService {
 
     void send(MessageDTO newsDTO);
+
+    void sendWithCallback(MessageDTO dto);
 }

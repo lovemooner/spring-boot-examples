@@ -7,10 +7,10 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import java.util.Arrays;
 import java.util.Properties;
 
-public class KafkaConsumerDemo {
+public class KafkaConsumerAutoCommitDemo {
     private final KafkaConsumer<String, String> consumer;
 
-    private KafkaConsumerDemo() {
+    private KafkaConsumerAutoCommitDemo() {
         Properties props = new Properties();
         props.put("bootstrap.servers", KafkaConstants.BOOTSTRAP_SERVERS);
         props.put("group.id", "group-test1");
@@ -32,7 +32,7 @@ public class KafkaConsumerDemo {
     }
 
     public static void main(String[] args) {
-        new KafkaConsumerDemo().consume();
+        new KafkaConsumerAutoCommitDemo().consume();
     }
 }
 

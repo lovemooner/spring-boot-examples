@@ -16,7 +16,7 @@ public class KafkaProducerDemo {
         Properties props = new Properties();
         props.put("bootstrap.servers", KafkaConstants.BOOTSTRAP_SERVERS);
         props.put("acks", "all");
-        props.put("retries", 0);
+        props.put("retries", 3);
         props.put("batch.size", 16384);
         props.put("linger.ms", 1);
         props.put("buffer.memory", 33554432);
@@ -28,9 +28,9 @@ public class KafkaProducerDemo {
     }
 
     void produce() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 5; i++) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

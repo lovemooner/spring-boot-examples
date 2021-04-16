@@ -4,10 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import love.moon.dto.MessageDTO;
 import love.moon.service.impl.KafkaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @auther lovemooner
@@ -22,9 +19,20 @@ public class KafkaController {
     @Autowired
     private KafkaServiceImpl service;
 
-    @PostMapping()
+    @GetMapping("/test")
+    public String send(){
+        return "ok";
+    }
+
+    @GetMapping("/send1")
     public String send(@RequestBody MessageDTO dto) {
         service.send(dto);
+        return "OK";
+    }
+
+    @GetMapping("/send2")
+    public String send2(@RequestBody MessageDTO dto) {
+        service.sendWithCallback(dto);
         return "OK";
     }
 }

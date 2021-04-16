@@ -52,7 +52,7 @@ public class KafkaConsumerConfiguration {
         factory.setBatchListener(true);
         factory.setConcurrency(properties.getConcurrency());
         factory.getContainerProperties().setPollTimeout(properties.getPollTimeout());
-        factory.getContainerProperties().setAckMode(AbstractMessageListenerContainer.AckMode.MANUAL);
+//        factory.getContainerProperties().setAckMode(AbstractMessageListenerContainer.AckMode.MANUAL);
         return factory;
     }
 
